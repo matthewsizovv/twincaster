@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#6e3bff">
+    <title>Twincast — Dating on Farcaster</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Twincast</h1>
+            <p>Find your match on Farcaster 🌟</p>
+        </header>
+        <a href="likes.html" style="display:block; margin-top:10px;">💘 View My Likes</a>
+        <div id="auth-section">
+            <button id="connect-btn">Connect Farcaster</button>
+        </div>
+        <div id="loader" class="hidden">
+            <div class="spinner"></div>
+            <p>Loading profiles...</p>
+        </div>
+        <div id="app" class="hidden">
+            <div class="profile-card" id="profile-card">
+                <div id="video-container">
+                    <video id="user-video" controls width="200" class="hidden"></video>
+                    <button id="record-btn" class="hidden">🎥 Record Video</button>
+                </div>
+                <img id="user-avatar" src="" alt="Profile">
+                <h2 id="username">@username</h2>
+                <p id="match-score">Match: 0%</p>
+                <p id="user-bio">Loading bio...</p>
+                <div class="casts">
+                    <p id="last-cast">Last cast: "Hello Farcaster!"</p>
+                </div>
+                <div class="actions">
+                    <button id="like-btn">❤️ Like</button>
+                    <button id="skip-btn">✖️ Skip</button>
+                </div>
+            </div>
+        </div>
+        <div id="premium-banner" class="hidden">
+            <p>🔥 Get <strong>Twincast Premium NFT</strong> for unlimited likes!</p>
+            <button id="premium-btn">Unlock Premium ($30)</button>
+        </div>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+</html>

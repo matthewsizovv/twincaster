@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Likes — Twincast</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#6e3bff">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Your Likes</h1>
+            <p>People you've liked on Twincast 💜</p>
+        </header>
+        <div id="likes-list"></div>
+        <a href="index.html">← Back to Swipes</a>
+    </div>
+    <script>
+        const likes = JSON.parse(localStorage.getItem("likes") || "[]");
+        const list = document.getElementById("likes-list");
+        if (likes.length === 0) {
+            list.innerHTML = "<p>You haven't liked anyone yet 😢</p>";
+        } else {
+            likes.forEach(user => {
+                const div = document.createElement("div");
+                div.className = "profile-card";
+                div.innerHTML = `
+                    <img src="${user.avatar_url}" alt="${user.username}" id="user-avatar">
+                    <h2>@${user.username}</h2>
+                    <p>${user.bio}</p>
+                    <p><em>Last cast:</em> "${user.last_cast}"</p>
+                `;
+                list.appendChild(div);
+            });
+        }
+    </script>
+</body>
+</html>

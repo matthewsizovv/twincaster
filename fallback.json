@@ -1,0 +1,10 @@
+{
+  "users": [
+    {
+      "id": "fallback-1",
+      "username": "farcaster_user",
+      "bio": "Try again when online!",
+      "avatar_url": "/icon-192.png"
+    }
+  ]
+}
